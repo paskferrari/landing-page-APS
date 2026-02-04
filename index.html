@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APS Per l'Intrapresa - Scuola Permanente per le Autonomie Locali dal 1966. Formazione enti locali, corsi amministratori comunali, consulenza strategica per la Pubblica Amministrazione.">
+    <title>APS Per l'Intrapresa | Formazione Enti Locali dal 1966</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #1e40af;
+            --secondary: #0f766e;
+            --accent: #d97706;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+            --border: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #0d5a54;
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 160px 0 100px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Sections General */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-tag {
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        /* Chi Siamo */
+        .about {
+            background: var(--white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        
+        .credentials {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .credentials h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .credentials-list {
+            list-style: none;
+        }
+        
+        .credentials-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .credentials-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image-placeholder {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            height: 500px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--accent);
+            color: white;
+            padding: 2rem;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .experience-badge span {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* Benefits */
+        .benefits {
+            background: var(--bg-light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Services */
+        .services {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            border: 2px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Training Areas */
+        .training {
+            background: linear-gradient(to bottom, var(--bg-light) 0%, white 100%);
+        }
+        
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .training-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--secondary);
+            transition: all 0.3s;
+        }
+        
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-top-color: var(--accent);
+        }
+        
+        .training-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .training-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .training-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Process */
+        .process {
+            background: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: var(--border);
+            z-index: 0;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            width: 20%;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .step p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            padding: 0 10px;
+        }
+        
+        /* Credibility */
+        .credibility {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .credibility .section-title {
+            color: white;
+        }
+        
+        .credibility .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-box .number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-box .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .institutions {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .institutions h3 {
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+        
+        .institutions-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+        
+        .institution {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Events */
+        .events {
+            background: var(--bg-light);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .event-date {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .event-date .day {
+            font-size: 2rem;
+            display: block;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .event-content {
+            padding: 1.5rem;
+        }
+        
+        .event-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .event-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .event-type {
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-section .btn {
+            background: white;
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+        
+        .cta-section .btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .cta-section .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-section .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Contact */
+        .contact {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .contact-item::before {
+            content: '📍';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item.email::before { content: '✉️'; }
+        .contact-item.phone::before { content: '📞'; }
+        .contact-item.hours::before { content: '🕒'; }
+        
+        .contact-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-form {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+        
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid,
+            .training-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .step {
+                width: 100%;
+                text-align: left;
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .step-number {
+                margin: 0;
+                flex-shrink: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-grid,
+            .training-grid,
+            .events-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Utility */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                APS PER L'INTRAPRESA
+                <span>Scuola Permanente per le Autonomie Locali</span>
+            </a>
+            <div class="nav-links">
+                <a href="#chi-siamo">Chi Siamo</a>
+                <a href="#servizi">Servizi</a>
+                <a href="#formazione">Formazione</a>
+                <a href="#eventi">Eventi</a>
+                <a href="#contatti" class="btn">Contattaci</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🎯 Iscritta al Registro Regionale APS Campania dal 2014</div>
+                <h1>Formazione Enti Locali che Genera Risultati Concreti</h1>
+                <p class="hero-subtitle">
+                    Da quasi 60 anni supportiamo Sindaci, Assessori e Dirigenti della Pubblica Amministrazione con corsi pratici, consulenza strategica e aggiornamento normativo continuo. <strong>La tua istituzione merita il meglio.</strong>
+                </p>
+                <div class="hero-cta">
+                    <a href="#catalogo" class="btn btn-large">Richiedi il Catalogo Formativo 2026</a>
+                    <a href="#consulenza" class="btn btn-outline btn-large">Prenota una Consulenza Gratuita</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">60</span>
+                        <span class="stat-label">Anni di Esperienza</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Amministratori Format</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Soddisfazione</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Enti Locali Partner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo -->
+    <section id="chi-siamo" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">La Nostra Storia</span>
+                    <h2>Una Scuola Permanente al Servizio delle Autonomie Locali dal 1966</h2>
+                    <p>
+                        <strong>APS Per l'Intrapresa</strong> rappresenta un punto di riferimento storico per la <strong>formazione pubblica amministrazione</strong> in Campania e nel Sud Italia. Nata nel 1966, ha accompagnato le trasformazioni del settore pubblico attraverso sei decenni di cambiamenti normativi e istituzionali.
+                    </p>
+                    <p>
+                        La nostra missione è chiara: fornire agli <strong>amministratori comunali</strong> e ai <strong>dirigenti PA</strong> gli strumenti pratici per governare con efficacia, rispettando la normativa e ottimizzando le risorse pubbliche. Non offriamo teoria astratta, ma soluzioni operative testate sul campo.
+                    </p>
+                    <p>
+                        Siamo <strong>iscritti al Registro Regionale APS Campania</strong> (Decreto n. 156 del 20/02/2014) e riconosciuti come fornitori per la PA sul MEPA. La nostra autorevolezza è il risultato di decenni di lavoro silenzioso e di risultati concreti ottenuti insieme agli enti locali.
+                    </p>
+                    
+                    <div class="credentials">
+                        <h4>📋 Credenziali Istituzionali</h4>
+                        <ul class="credentials-list">
+                            <li>Iscrizione Registro Regionale APS Campania (Decreto n. 156/2014)</li>
+                            <li>Fornitore abilitato MEPA per la Pubblica Amministrazione</li>
+                            <li>Riconoscimento Regione Campania per attività di formazione</li>
+                            <li>Attestati validi per carriera, progressioni economiche e concorsi pubblici</li>
+                            <li>Network di docenti operativi nella PA e settore giuridico-amministrativo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <div>
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🏛️</div>
+                            <div>Formazione Continua<br>per la PA</div>
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span>60</span>
+                        <small>Anni di<br>Attività</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perché Sceglierci -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">I Nostri Vantaggi</span>
+                <h2 class="section-title">Perché gli Enti Locali Ci Scelgono</h2>
+                <p class="section-subtitle">
+                    Offriamo un approccio unico alla <strong>formazione enti locali</strong>: combinazione di esperienza storica, aggiornamento normativo continuo e metodologia pratica orientata ai risultati.
+                </p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Formazione Pratica, Non Teorica</h3>
+                    <p>I nostri corsi si basano su casi reali, documenti concreti e simulazioni operative. I partecipanti tornano in ente con procedure già pronte da implementare e modelli utilizzabili immediatamente.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">👨‍⚖️</div>
+                    <h3>Docenti che Operano nella PA</h3>
+                    <p>Segretari comunali, dirigenti di fascia dirigenziale, magistrati contabili e consulenti specializzati. Chi insegna vive quotidianamente le stesse sfide che affrontano i partecipanti.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Aggiornamento Normativo Continuo</h3>
+                    <p>Il settore pubblico cambia rapidamente. Garantiamo contenuti sempre allineati all'ultima legislazione, dai decreti attuativi del <strong>Nuovo Codice Appalti</strong> alle novità sul <strong>PNRR</strong>.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Percorsi Personalizzati per Enti</h3>
+                    <p>Ogni comunità ha esigenze specifiche. Progettiamo piani formativi su misura per Comuni, Province, Città Metropolitane e Unioni, rispettando budget e obiettivi strategici.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Ottimizzazione dei Budget Pubblici</h3>
+                    <p>Supportiamo gli enti nell'utilizzo efficiente delle risorse formative, anche attraverso il Fondo Nuove Competenze e altre opportunità di finanziamento dedicate alla PA.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Attestati per Carriera e Concorsi</h3>
+                    <p>I nostri attestati sono riconosciuti per le progressioni di carriera, i concorsi pubblici e la formazione obbligatoria degli amministratori locali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section id="servizi" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Le Nostre Soluzioni</span>
+                <h2 class="section-title">Servizi per la Pubblica Amministrazione</h2>
+                <p class="section-subtitle">
+                    Un'offerta integrata di <strong>formazione e consulenza per enti locali</strong>, progettata per rispondere alle sfide quotidiane di Comuni, Province e società pubbliche.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📖 Formazione Istituzionale e Normativa</h3>
+                    <p>Corsi obbligatori e di specializzazione per amministratori e dipendenti su tutti gli ambiti del diritto amministrativo, contabilità e procedimenti amministrativi. Formazione continua per segretari comunali e responsabili di servizio.</p>
+                    <a href="#" class="service-link">Scopri i percorsi →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>💡 Formazione Manageriale per la PA</h3>
+                    <p>Leadership pubblica, gestione delle risorse umane, project management e competenze trasversali per dirigenti e funionari. Soft skills e management applicato al contesto istituzionale.</p>
+                    <a href="#" class="service-link">Vedi il programma →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🤝 Consulenza Strategica per Enti Locali</h3>
+                    <p>Affiancamento personalizzato per la riorganizzazione degli uffici, revisione dei procedimenti, gestione del cambiamento e supporto nella transizione digitale. Analisi e soluzioni concrete per ottimizzare l'efficienza.</p>
+                    <a href="#consulenza" class="service-link">Richiedi un incontro →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🎤 Eventi, Convegni e Networking Istituzionale</h3>
+                    <p>Momenti di confronto tra amministratori, tecnici e rappresentanti istituzionali per discutere best practice, criticità comuni e soluzioni innovative nel governo del territorio.</p>
+                    <a href="#eventi" class="service-link">Prossimi appuntamenti →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🔍 Osservatorio Permanente sulle Autonomie Locali</h3>
+                    <p>Monitoraggio continuo delle novità normative, giurisprudenza dei conti, circolari ministeriali e prassi amministrative. Newsletter settimanale e alert tempestivi per gli iscritti.</p>
+                    <a href="#" class="service-link">Iscriviti all'Osservatorio →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>📋 Progettazione PNRR e Fondi Europei</h3>
+                    <p>Supporto specifico per l'accesso e la gestione dei fondi del PNRR, progettazione degli interventi, rendicontazione e formazione del personale sui nuovi obblighi collegati ai finanziamenti europei.</p>
+                    <a href="#" class="service-link">Approfondisci →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aree Formative -->
+    <section id="formazione" class="training">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Catalogo 2026</span>
+                <h2 class="section-title">Aree Formative Strategiche</h2>
+                <p class="section-subtitle">
+                    I temi caldi per la <strong>formazione pubblica amministrazione</strong> nel 2026. Percorsi progettati per rispondere alle esigenze di <strong>aggiornamento dirigenti PA</strong> e amministratori locali.
+                </p>
+            </div>
+            
+            <div class="training-grid">
+                <div class="training-card">
+                    <span class="training-tag">Priorità 2026</span>
+                    <h3>PNRR e Fondi Europei</h3>
+                    <p>Gestione, rendicontazione e conformità per l'accesso ai fondi del Recovery Fund e programmi europei.</p>
+                </div>
+                
+                <div class="training-card">
+                    <span class="training-tag">Novità</span>
+                    <h3>Nuovo Codice Appalti</h3>
+                    <p>Applicazione pratica del D.Lgs. 36/2023 per affidamenti, gare e gestione contrattuale.</p>
+                </div>
+                
+                <div class="training-card">
+                    <h3>Bilancio e Gestione Finanziaria</h3>
+                    <p>Contabilità degli enti locali, bilancio armonizzato, conto consuntivo e gestione delle risorse.</p>
+                </div>
+                
+                <div class="training-card">
+                    <h3>Anticorruzione e Trasparenza</h3>
+                    <p>Adempimenti PIAO, Piano Triennale Trasparenza, accesso civico e gestione degli OO.PP.</p>
+                </div>
+                
+                <div class="training-card">
+                    <span class="training-tag">Digitale</span>
+                    <h3>Transizione Digitale PA</h3>
+                    <p>PNRR Innovazione, CAD, digitalizzazione dei procedimenti, PEC e piattaforme telematiche.</p>
+                </div>
+                
+                <div class="training-card">
+                    <h3>Gestione del Personale</h3>
+                    <p> Rapporto di lavoro, procedure disciplinari, valutazione performance e pubblico impiego.</p>
+                </div>
+                
+                <div class="training-card">
+                    <h3>Welfare Locale e Politiche Sociali</h3>
+                    <p>Piani sociali, servizi alla persona, PUA, politiche abitative e inclusione sociale.</p>
+                </div>
+                
+                <div class="training-card">
+                    <span class="training-tag">Green</span>
+                    <h3>Sostenibilità e Green Procurement</h3>
+                    <p>Acquisti verdi, economia circolare, efficientamento energetico e obiettivi Agenda 2030.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <a href="#catalogo" class="btn btn-large">Richiedi il Catalogo Formativo 2026 Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Come Funziona -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Metodo</span>
+                <h2 class="section-title">Come Lavoriamo con gli Enti</h2>
+                <p class="section-subtitle">
+                    Un processo collaudato in 60 anni di attività per garantire formazione efficace e risultati misurabili.
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Analisi del Fabbiogno</h3>
+                        <p>Valutiamo insieme a te le esigenze specifiche dell'ente, i gap formativi e gli obiettivi strategici da raggiungere.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Progettazione</h3>
+                        <p>Definiamo un piano formativo personalizzato, i docenti più idonei e le modalità di erogazione (in presenza, FAD o mista).</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Erogazione</h3>
+                        <p>Formazione pratica con materiali operativi, casi studio reali e interazione continua con i docenti esperti.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Monitoraggio</h3>
+                        <p>Verifica dell'apprendimento e raccolta feedback per ottimizzare i percorsi successivi e garantire la qualità.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3>Certificazione</h3>
+                        <p>Rilascio attestati validi per la carriera e supporto nella rendicontazione delle risorse investite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility -->
+    <section class="credibility">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: rgba(255,255,255,0.9);">Autorevolezza</span>
+                <h2 class="section-title">Numeri che Certificano la Nostra Esperienza</h2>
+                <p class="section-subtitle">
+                    Decenni di attività al servizio delle <strong>autonomie locali</strong> si traducono in risultati concreti e relazioni consolidate con gli enti del territorio.
+                </p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="number">60</span>
+                    <span class="label">Anni di Attività<br>(Dal 1966)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number">5.000+</span>
+                    <span class="label">Amministratori<br>Formati</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number">300+</span>
+                    <span class="label">Enti Locali<br>Partner</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number">98%</span>
+                    <span class="label">Tasso di<br>Soddisfazione</span>
+                </div>
+            </div>
+            
+            <div class="institutions">
+                <h3>Enti e Istituzioni che Hanno Scelto la Nostra Formazione</h3>
+                <div class="institutions-grid">
+                    <div class="institution">Regione Campania</div>
+                    <div class="institution">Città Metropolitana di Napoli</div>
+                    <div class="institution">Unione Province Campane</div>
+                    <div class="institution">Comuni della Campania</div>
+                    <div class="institution">ANCI Campania</div>
+                    <div class="institution">Formez PA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventi -->
+    <section id="eventi" class="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Appuntamenti</span>
+                <h2 class="section-title">Prossimi Eventi e Attività</h2>
+                <p class="section-subtitle">
+                    Convegni, workshop e seminari per approfondire le novità normative e confrontarti con esperti e colleghi.
+                </p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span>FEB 2026</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Seminario</span>
+                        <h3>Il Nuovo Codice Appalti: Primi 6 Mesi di Applicazione</h3>
+                        <div class="event-meta">📍 Napoli | 🕘 09:30 - 17:00</div>
+                        <p>Analisi critica delle novità del D.Lgs. 36/2023 e soluzioni operative per gli affidamenti sotto soglia.</p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">03</span>
+                        <span>MAR 2026</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Workshop</span>
+                        <h3>PNRR: Rendicontazione e Controllo</h3>
+                        <div class="event-meta">📍 Salerno | 🕘 09:30 - 13:00</div>
+                        <p>Gestione degli obblighi collegati ai finanziamenti europei e verifica dei requisiti di conformità.</p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">18</span>
+                        <span>MAR 2026</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Convegno</span>
+                        <h3>Autonomie Locali: Sfide 2026</h3>
+                        <div class="event-meta">📍 Napoli | 🕘 09:30 - 17:30</div>
+                        <p>Appuntamento annuale con Sindaci e Segretari per discutere il futuro della governance locale.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <a href="#" class="btn btn-secondary btn-large">Scopri Tutti i Prossimi Corsi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Multiple -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pronto a Portare la Tua Istituzione al Livello Successivo?</h2>
+            <p>
+                Scegli come vuoi iniziare il percorso con noi. Siamo a disposizione per una consulenza gratuita e senza impegno per valutare insieme le esigenze formative del tuo ente.
+            </p>
+            <div class="cta-buttons">
+                <a href="#catalogo" class="btn">Richiedi il Catalogo 2026</a>
+                <a href="#consulenza" class="btn btn-outline">Prenota una Consulenza Gratuita</a>
+                <a href="#contatti" class="btn btn-outline">Piano Formativo Personalizzato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">Contatti</span>
+                    <h2 class="section-title">Siamo a Tua Disposizione</h2>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                        Compila il form per ricevere informazioni, oppure contattaci direttamente. Il nostro team risponderà entro 24 ore.
+                    </p>
+                    
+                    <div class="contact-item">
+                        <strong>Sede Operativa</strong>
+                        Via Principale, 123<br>
+                        80100 Napoli (NA)
+                    </div>
+                    
+                    <div class="contact-item email">
+                        <strong>Email</strong>
+                        info@apsintrapresa.it<br>
+                        formazione@apsintrapresa.it
+                    </div>
+                    
+                    <div class="contact-item phone">
+                        <strong>Telefono</strong>
+                        +39 081 XXX XXXX<br>
+                        +39 081 XXX XXXX (Fax)
+                    </div>
+                    
+                    <div class="contact-item hours">
+                        <strong>Orari Segreteria</strong>
+                        Lun-Ven: 09:00 - 18:00<br>
+                        Sab: 09:00 - 13:00 (su appuntamento)
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-light); border-radius: 8px;">
+                        <strong style="color: var(--primary); display: block; margin-bottom: 0.5rem;">🎓 Per Enti e PA</strong>
+                        <p style="font-size: 0.95rem; margin: 0;">Siamo fornitori MEPA. Per acquisti tramite MePA contattare la segreteria amministrativa.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form" id="catalogo">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">Richiedi Informazioni</h3>
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome *</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Mario">
+                            </div>
+                            <div class="form-group">
+                                <label for="cognome">Cognome *</label>
+                                <input type="text" id="cognome" name="cognome" required placeholder="Rossi">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ente">Ente di Appartenenza *</label>
+                            <input type="text" id="ente" name="ente" required placeholder="Comune di... / Provincia di...">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ruolo">Ruolo *</label>
+                                <select id="ruolo" name="ruolo" required>
+                                    <option value="">Seleziona...</option>
+                                    <option value="sindaco">Sindaco</option>
+                                    <option value="assessore">Assessore</option>
+                                    <option value="consigliere">Consigliere Comunale</option>
+                                    <option value="dirigente">Dirigente</option>
+                                    <option value="funzionario">Funzionario</option>
+                                    <option value="segretario">Segretario Comunale</option>
+                                    <option value="dipendente">Dipendente PA</option>
+                                    <option value="altro">Altro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Istituzionale *</label>
+                                <input type="email" id="email" name="email" required placeholder="nome@comune...">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Telefono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+39 3XX XXX XXXX">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interesse">Sono interessato a *</label>
+                            <select id="interesse" name="interesse" required>
+                                <option value="">Seleziona...</option>
+                                <option value="catalogo">Catalogo Formativo 2026</option>
+                                <option value="consulenza">Consulenza Gratuita</option>
+                                <option value="personalizzato">Piano Formativo Personalizzato</option>
+                                <option value="eventi">Eventi e Convegni</option>
+                                <option value="newsletter">Iscrizione Newsletter</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="messaggio">Messaggio</label>
+                            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Descrivi brevemente la tua richiesta..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Acconsento al trattamento dei dati personali ai sensi del GDPR 679/2016 per ricevere informazioni sui servizi formativi *</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Desidero ricevere la newsletter mensile con aggiornamenti normativi e corsi</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-large" style="width: 100%;">Invia Richiesta</button>
+                        
+                        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-light); text-align: center;">
+                            * Campi obbligatori
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>APS PER L'INTRAPRESA</h4>
+                    <p>Scuola Permanente per le Autonomie Locali dal 1966. Formazione pratica, consulenza strategica e aggiornamento continuo per la Pubblica Amministrazione.</p>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Iscritta al Registro Regionale APS Campania</strong><br>
+                        Decreto n. 156 del 20/02/2014
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Formazione</h5>
+                    <ul>
+                        <li><a href="#">Catalogo Corsi 2026</a></li>
+                        <li><a href="#">Formazione Istituzionale</a></li>
+                        <li><a href="#">Formazione Manageriale</a></li>
+                        <li><a href="#">Corsi PNRR</a></li>
+                        <li><a href="#">Nuovo Codice Appalti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Servizi</h5>
+                    <ul>
+                        <li><a href="#">Consulenza per Enti</a></li>
+                        <li><a href="#">Osservatorio Autonomie</a></li>
+                        <li><a href="#">Eventi e Convegni</a></li>
+                        <li><a href="#">Formazione MEPA</a></li>
+                        <li><a href="#">Partnership</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Utility</h5>
+                    <ul>
+                        <li><a href="#">Chi Siamo</a></li>
+                        <li><a href="#">Docenti</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 APS Per l'Intrapresa - Scuola Permanente per le Autonomie Locali. Tutti i diritti riservati.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    P.IVA XXXXXXXXXXX | Codice Fiscale XXXXXXXXXXX | Iscritta al Registro Regionale APS Campania
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling per i link di ancoraggio
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Animazione numeri al scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.benefit-card, .service-card, .training-card').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
